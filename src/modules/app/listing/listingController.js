@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = /*@ngInject*/
-  function listingController($scope) {
+  function listingController($scope, ListingService) {
     $scope.welcome = 'This is the Listing';
 
     $scope.info = {

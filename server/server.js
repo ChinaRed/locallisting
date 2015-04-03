@@ -7,8 +7,9 @@ var listings = require('./controllers/listing');
 
 mongoose.connect('mongodb://chinared:'+process.env.DBPASS+'@ds061371.mongolab.com:61371/locallistings');
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
+app.use(function (req, res, next){
+  res.set("Access-Control-Allow-Origin","*");
+  next();
 });
 
 app.use('/api/listings', listings);
