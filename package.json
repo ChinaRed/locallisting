@@ -38,6 +38,7 @@
   "browserify-shim": {},
   "dependencies": {
     "express": "^4.12.3",
-    "gulp-sass": "^1.3.3"
+    "gulp-sass": "^1.3.3",
+    "mongoose": "^4.0.1"
   }
 }
