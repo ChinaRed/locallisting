@@ -3,6 +3,31 @@
 
 // Globals
 
-body{
-  background-color: $light-grey;
+.wrapper{
+  width: 960px;
+  margin: auto;
+}
+
+section.header{
+  background-color: salmon;
+}
+
+section.bus_info{
+  background-color: pink;
+
+  img{
+    width: 600px;
+    height: 300px;
+  }
+}
+
+section.coupon{
+  img{
+    width: 600px;
+    height: 300px;
+  }
+}
+
+section.rating{
+  background-color: orange;
 }
