@@ -11,9 +11,12 @@ router.get("/",function (req,res){
 
 
 router.get('/:id', function (req,res){
-  Listing.findOne({_id:params.id},
-    function(err, listing){
-      res.json(listing);
+  Listing.findOne({_id:req.params.id},
+    function (err, listing){
+      if(err) throw err;
+      res.json('single', {
+        listing : listing
+      });
   });
 });
 
