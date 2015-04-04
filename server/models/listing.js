@@ -30,13 +30,13 @@ var listingSchema = new Schema ({
           terms: String,
           expiration: Date,
           image: String
-          },
-  reviews: {
-          name: String,
-          rating: String,
-          review: String
-          },
-  tags: Array 
+          }
+  // reviews: {
+  //         name: String,
+  //         rating: String,
+  //         review: String
+  //         },
+  // tags: Array 
 });
 
 module.exports = mongoose.model('listings', listingSchema);

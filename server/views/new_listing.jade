@@ -1,0 +1,59 @@
+extends ./layout
+block content
+  form(action="/api/listings", method="POST")
+    h2 Business Information
+    label(for="business_name") business name
+    input(type="text", id="business_name", name="name")
+    br
+    label(for="phone") phone
+    input(type="text", id="phone", name="phone")
+    br
+    label(for="website") website
+    input(type="text", id="website", name="URL")
+    br
+    h2 Hours
+    label(for="mon") mon
+    input(type="text", id="mon", name="mon")
+    label(for="tue") tue
+    input(type="text", id="tue", name="tue")
+    label(for="wed") wed
+    input(type="text", id="wed", name="wed")
+    label(for="thu") thu
+    input(type="text", id="thu", name="thu")
+    label(for="fri") fri
+    input(type="text", id="fri", name="fri")
+    label(for="sat") sat
+    input(type="text", id="sat", name="sat")
+    label(for="sun") sun
+    input(type="text", id="sun", name="sun")
+    br
+    h2 Location
+    label(for="street") street
+    input(type="text", id="street", name="street")
+    br
+    label(for="unit") unit
+    input(type="text", id="unit", name="unit")
+    br
+    label(for="city") city
+    input(type="text", id="city", name="city")
+    br
+    label(for="zip") zip
+    input(type="text", id="zip", name="zip")
+    br
+    label(for="geo") geo
+    input(type="text", id="geo", name="geo")
+    br
+    h2 Deal Info
+    label(for="offer") offer
+    input(type="text", id="offer", name="offer")
+    br
+    label(for="description") description
+    input(type="text", id="description", name="description")
+    br
+    label(for="terms") terms
+    input(type="text", id="terms", name="terms")
+    br
+    label(for="expiration") expiration
+    input(type="text", id="expiration", name="expiration")
+    br
+    button save

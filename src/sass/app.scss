@@ -15,25 +15,23 @@ ul.categories{
 }
 
 section.header{
-  background-color: salmon;
+  background-color: lightyellow;
+
+  h2{
+    a{
+      font-size: 1.5em;
+    }
+  }
 }
 
 section.bus_info{
-  background-color: pink;
-
-  img{
-    width: 600px;
-    height: 300px;
-  }
+  background-color: lightpink;
 }
 
 section.coupon{
-  img{
-    width: 600px;
-    height: 300px;
-  }
+  background-color: lightgreen;
 }
 
 section.rating{
-  background-color: orange;
+  background-color: lightsalmon;
 }

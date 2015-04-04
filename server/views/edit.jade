@@ -1,0 +1,8 @@
+extends ./layout
+
+block content
+  .field
+    form(action="/listing/#{article._id}?_method=PUT", method="POST")
+    .field
+      h1 name:
+        input(type="text", name="title", value=listing.info.name)
