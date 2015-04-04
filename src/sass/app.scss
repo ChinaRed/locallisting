@@ -1,9 +1,21 @@
 @import "partials/settings";
 @import "partials/reset";
 
-// Globals
+html{
+  font-family: $roboto;
+}
+header{
+  text-align: center;
+  
+  .logo{
+    font-size: 2em;
+    font-weight: bold;
+  }
+}
 
 ul.categories{
+  text-align: center;
+  
   li{
     display: inline;
   }
