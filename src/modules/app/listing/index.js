@@ -7,10 +7,16 @@ module.exports =
   ])
   .config(function ($stateProvider) {
     $stateProvider
-    .state('listing', {
+    .state('listings', {
       url: '',
       templateUrl: 'app/listing/layout.html',
       controller: 'listingController'
+    })
+    .state('listing', {
+      url: '/listing/:id',
+      templateUrl: 'app/listing/listing.html',
+      controller: 'singleListingController'
     });
   })
-  .controller('listingController', require('./listingController'));
+  .controller('listingController', require('./listingController'))
+  .controller('singleListingController', require('./singleListingController'));
