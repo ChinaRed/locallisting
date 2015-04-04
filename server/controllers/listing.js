@@ -10,7 +10,7 @@ router.get("/",function (req,res){
   });
 });
 
-//edits listing
+// creates new listing
 router.get('/new_listing',function (req,res){
   res.render('new_listing');
 });
@@ -56,7 +56,7 @@ router.post('/', function (req,res){
           terms: req.body.terms,
           expiration: req.body.date,
           image: req.body.photoURL
-          },
+          }
   // reviews: {
   //         author: req.body.name,
   //         rating: req.body.rating,
@@ -68,7 +68,51 @@ router.post('/', function (req,res){
     if (err) throw err;
     res.redirect("/");
   });
+});
 
+// edits Listing
+router.put('/:id', function (req,res){
+  Listing.update({_id:req.params.id},
+    {
+      info : { 
+            name: req.body.name, 
+            phone: req.body.phone, 
+            website: req.body.URL,
+            hours: {
+                    mon: req.body.mon,
+                    tue: req.body.tue,
+                    wed: req.body.wed,
+                    thu: req.body.thu,
+                    fri: req.body.fri,
+                    sat: req.body.sat,
+                    sun: req.body.sun
+                  },
+            image: req.body.photoURL
+           },
+    location: {
+            street: req.body.street,
+            unit: req.body.unit,
+            city: req.body.city,
+            zip: req.body.zip,
+            geo: req.body.geo
+            },
+    coupon: {
+            offer: req.body.offer,
+            description: req.body.description,
+            terms: req.body.terms,
+            expiration: req.body.date,
+            image: req.body.photoURL
+            }
+    // reviews: {
+    //         author: req.body.name,
+    //         rating: req.body.rating,
+    //         review: req.body.review
+    //         },
+    // tags: req.body.string 
+            },
+            function (err, listing){
+              res.redirect('/');  
+  });
 });
 
 module.exports = router;

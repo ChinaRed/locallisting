@@ -1,0 +1,10 @@
+extends ./layout
+block content
+  header
+    h1 Admin
+
+  .listings
+    each listing in listings
+      article.edit
+        h2.title!= listing.info.name
+        p.body!= listing.info.

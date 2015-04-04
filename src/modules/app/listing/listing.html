@@ -2,9 +2,9 @@
     <div class="title">
       <h2>{{listing.info.name}}</h2>
     </div>
-    <div class="tags" ng-repeat="tag in listing.tags">
+    <div class="tags">
       <ul>
-        <li><a href="#">{{tag}}</a></li>
+        <li ng-repeat="tag in listing.tags"><a href="#">{{tag}}</a></li>
       </ul>
     </div>
   </section>
