@@ -4,8 +4,7 @@ module.exports = /*@ngInject*/
   function listingController($scope, ListingService) {
     $scope.welcome = 'This is the Listing';
 
-    $scope.info = {
-      title : "this is title",
-      description : "this is description"
-    };
+    ListingService.all().then(function (data) {
+      $scope.listings = data.data;
+    });
   };

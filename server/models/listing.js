@@ -33,9 +33,10 @@ var listingSchema = new Schema ({
           },
   reviews: {
           name: String,
-          rating: Number,
+          rating: String,
           review: String
-  } 
+          },
+  tags: Array 
 });
 
 module.exports = mongoose.model('listings', listingSchema);

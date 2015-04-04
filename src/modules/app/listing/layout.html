@@ -1,44 +1,44 @@
-<ul>
-  <li ng-repeat="listing in listings">{{listing.info.name}}</li>
-</ul>
-<section class="header">
-  <div class="title">
-    <h2>{{info.title}}</h2>
-  </div>
-  <div class="tags">
-    <ul>
-      <li>{{tag1}}</li>
-      <li>{{tag2}}</li>
-      <li>{{tag3}}</li>
-      <li>{{tag4}}</li>
-    </ul>
-  </div>
-</section>
-<section class="bus_info">
-  <div class="bus_hours">
-    <h2>{{info.hours.today}}</h2>
-  </div>
-  <div class="phone_number">
-    <h2>{{info.phone}}</h2>
-  </div>
-  <div class="website">
-    <a href="#">{{info.website}}</a>
-  </div>
-  <div class="location">
-    <h2>{{info.location}}</h2>
-  </div>
-  <div class="map"><img src="http://www.honolulugiftfair.com/images/map.blaisdell.jpg"></div>
-</section>
-<section class="coupon">
-  <div "title"><img src="http://bloo.com.au/img/rev8-1/perth-best/melb-cup/C%20Restaurant%201b.jpg"><h2>Buy One Get One!</h2></div>
-  <div "details">
-    <p class="offer">offer: Get one free meal when you buy one</p>
-    <p class="description">description: one coupon per customer</p>
-    <p class="terms">one coupon per group</p>
-    <p class="expiration">expiration: date</p>
-  </div>
-</section>
-<section class="rating">
-  <div class="rating">{{stars}}</div>
-  <div class="reviews">{{thisreview}}</div>
-</section>
+<div ng-repeat="listing in listings">
+  <section class="header">
+    <div class="title">
+      <h2>{{listing.info.name}}</h2>
+    </div>
+    <div class="tags" ng-repeat="tag in listing.tags">
+      <ul>
+        <li><a href="#">{{tag}}</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="bus_info">
+    <div class="bus_hours">
+      <h2>{{info.hours.today}}</h2>
+    </div>
+    <div class="phone_number">
+      <h2>{{listing.info.phone}}</h2>
+    </div>
+    <div class="website">
+      <a href="#">{{listing.info.website}}</a>
+    </div>
+    <div class="location">
+      <h2>{{listing.location.street}} <span>{{listing.location.unit}}</span> </h2>
+      <h2>{{listing.location.city}}</h2>
+      <h2>{{listing.location.zip}}</h2>
+    </div>
+    <div class="map"><img src="http://www.honolulugiftfair.com/images/map.blaisdell.jpg"></div>
+  </section>
+  <section class="coupon">
+    <div "title"><img src="http://bloo.com.au/img/rev8-1/perth-best/melb-cup/C%20Restaurant%201b.jpg"></div>
+    <div "details">
+      <p class="offer">{{listing.coupon.offer}}</p>
+      <p class="description">{{listing.coupon.description}}</p>
+      <p class="terms">{{listing.coupon.terms}}</p>
+      <p class="expiration">{{listing.coupon.expiration}}</p>
+      <img src="coupon_image">
+    </div>
+  </section>
+  <section class="rating">
+    <div class="author">{{listing.reviews.name}}</div>
+    <div class="rating">{{listing.reviews.rating}}</div>
+    <div class="review">{{listing.reviews.review}}</div>
+  </section>
+</div>
