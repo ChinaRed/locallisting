@@ -1,12 +1,10 @@
 'use strict';
 
 module.exports = /*@ngInject*/
-  function listingController($scope, ListingService, $state) {
+  function listingController($scope, EditListing, $state) {
     $scope.welcome = 'This is the Listing';
 
-    ListingService.all().then(function (data) {
+    EditListing.post().then(function (data) {
       $scope.listings = data.data;
     });
   };
-
-

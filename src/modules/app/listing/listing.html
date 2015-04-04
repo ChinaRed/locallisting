@@ -1,7 +1,6 @@
-<div ng-repeat="listing in listings">
   <section class="header">
     <div class="title">
-      <h2><a ui-sref="listing({id:listing._id})">{{listing.info.name}}</a></h2>
+      <h2>{{listing.info.name}}</h2>
     </div>
     <div class="tags" ng-repeat="tag in listing.tags">
       <ul>
@@ -11,7 +10,7 @@
   </section>
   <section class="bus_info">
     <div class="bus_hours">
-      <h2>{{info.hours.today}}</h2>
+      <h2>{{listing.info.hours.today}}</h2>
     </div>
     <div class="phone_number">
       <h2>{{listing.info.phone}}</h2>
@@ -20,7 +19,7 @@
       <a href="#">{{listing.info.website}}</a>
     </div>
     <div class="location">
-      <h2>{{listing.location.street}} <span>{{listing.location.unit}}</span></h2>
+      <h2>{{listing.location.street}} <span>{{listing.location.unit}}</span> </h2>
       <h2>{{listing.location.city}}</h2>
       <h2>{{listing.location.zip}}</h2>
     </div>
@@ -41,4 +40,3 @@
     <div class="rating">{{listing.reviews.rating}}</div>
     <div class="review">{{listing.reviews.review}}</div>
   </section>
-</div>

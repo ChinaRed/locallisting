@@ -6,8 +6,8 @@ module.exports = /*@ngInject*/
       all : function(){
         return $http.get('http://localhost:2233/api/listings');
       },
-      get : function(){
-        return $http.get('http://localhost:2233/api/listings/:id');
+      get : function(listing_id){
+        return $http.get('http://localhost:2233/api/listings/' + listing_id);
       }
     };
   };
