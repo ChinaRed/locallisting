@@ -1,0 +1,13 @@
+extends ../layout
+block content
+  header
+    h1 Login
+
+  .login_fieldset
+    form(action="/login", method="POST")
+      div
+        input(type="text", name="username", placeholder="User Name")
+      div
+        input(type="password", name="password", placeholder="Password")
+      div
+        button Log In

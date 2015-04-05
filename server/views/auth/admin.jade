@@ -1,4 +1,4 @@
-extends ./layout
+extends ../layout
 block content
   header
     h1 Admin
@@ -7,4 +7,4 @@ block content
     each listing in listings
       article.edit
         h2.title!= listing.info.name
-        p.body!= listing.info.
+        //- a(href="listings/edit/#{article._id}")
