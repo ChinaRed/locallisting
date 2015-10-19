@@ -1,0 +1,9 @@
+extends ../layout
+block content
+  header
+    h1 Admin
+
+  .listings
+    each listing in listings
+      h2.title!= listing.info.name
+      a(href='admin/edit/#{listing._id}')!=listing.info.name

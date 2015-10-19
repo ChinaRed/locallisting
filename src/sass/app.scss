@@ -1,7 +1,57 @@
 @import "partials/settings";
 @import "partials/reset";
 
-// Globals
+html{
+  font-family: $roboto;
+}
+
+section.listing_header{
+  max-width: 1000px;
+  margin: auto;
+  // display: inline-block;
+
+  @media #{$small-only}{
+    width: 100%;
+    margin: auto;
+  }
+}
+
+div.listing_banner{
+  background-color: grey;
+  width: 100%;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // display: inline-block;
+
+    span{
+      color: white;
+      font-size: 1.5em;
+      margin-left: 10%;
+      margin-top: 70%;
+    }
+
+  @media #{$small-only}{
+    width: 100%;
+  }
+}
+
+header{
+  text-align: center;
+  
+  .logo{
+    font-size: 2em;
+    font-weight: bold;
+  }
+}
+
+ul.categories{
+  text-align: center;
+  
+  li{
+    display: inline;
+  }
+}
 
 .wrapper{
   width: 960px;
@@ -9,25 +59,24 @@
 }
 
 section.header{
-  background-color: salmon;
+  background-color: lightyellow;
+
+  h2{
+    a{
+      font-size: 1.5em;
+    }
+  }
 }
 
 section.bus_info{
-  background-color: pink;
-
-  img{
-    width: 600px;
-    height: 300px;
-  }
+  background-color: lightpink;
 }
 
 section.coupon{
-  img{
-    width: 600px;
-    height: 300px;
-  }
+  background-color: lightgreen;
 }
 
 section.rating{
-  background-color: orange;
+  background-color: lightsalmon;
+  margin-bottom: 35px;
 }

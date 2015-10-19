@@ -2,6 +2,7 @@ global.SRC_FOLDER = 'src';
 global.BUILD_FOLDER = 'build';
 global.RELEASE_FOLDER = 'release';
 global.TMP_FOLDER = 'tmp';
+global.SERVER_FOLDER = 'server';
 
 global.config = {
   paths: {
@@ -60,6 +61,7 @@ global.config = {
   },
   ports: {
     staticServer: 8080,
+    serverPort: 2233,
     livereloadServer: 35729
   }
 };
