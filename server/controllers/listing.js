@@ -2,19 +2,19 @@ var Listing = require('../models/listing');
 var express = require('express');
 var router = express.Router();
 
-function ensureAuthenticated (req, res, next){
-  if (req.user && req.isAuthenticated()){
-    return next();
-  }
-  res.redirect("/login");
-  console.log('failed login');
-}
+// function ensureAuthenticated (req, res, next){
+//   if (req.user && req.isAuthenticated()){
+//     return next();
+//   }
+//   res.redirect("/login");
+//   console.log('failed login');
+// }
 
-router.get('/admin', ensureAuthenticated, function (req,res){
-  Listing.find(function (err, listings){
-    res.render('auth/admin', { listings : listings });
-  });
-});
+// router.get('/admin', ensureAuthenticated, function (req,res){
+//   Listing.find(function (err, listings){
+//     res.render('auth/admin', { listings : listings });
+//   });
+// });
 
 // gets listing page
 router.get("/",function (req,res){
@@ -44,6 +44,7 @@ router.post('/', function (req,res){
   { 
     info : { 
           name: req.body.name, 
+          summary: req.body.summary,
           phone: req.body.phone, 
           website: req.body.URL,
           hours: {
@@ -90,6 +91,7 @@ router.put('/:id', function (req,res){
     {
       info : { 
             name: req.body.name, 
+            summary: req.body.summary,
             phone: req.body.phone, 
             website: req.body.URL,
             hours: {

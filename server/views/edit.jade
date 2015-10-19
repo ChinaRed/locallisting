@@ -1,11 +1,69 @@
 extends ./layout
 
 block content
+  //- .field
+    //- form(action="/api/listings/#{article._id}?_method="PUT", method="POST")
   .field
-    form(action="/api/listings/#{article._id}?_method=PUT", method="POST")
-    .field
-      h1 name:
-        input(type="text", name="title", value=listing.info.name)
+    form(action="/api/listings/#{listings._id}?_method=PUT" method="POST")
+      h2 Business Information
+      label(for="business_name") business name
+      input(type="text", name="name", value=listings.info.name)
+      br
+      label(for="business_summary") business summary 
+      input(type="text", value=listings.info.summary)
+      br
+      label(for="phone") phone
+      input(type="text", value=listings.info.phone)
+      br
+      label(for="website") website
+      input(type="text", value=listings.info.URL)
+      br
+      h2 Hours
+      label(for="mon") mon
+      input(type="text", value=listings.info.mon)
+      label(for="tue") tue
+      input(type="text", value=listings.info.tue)
+      label(for="wed") wed
+      input(type="text", value=listings.info.wed)
+      label(for="thu") thu
+      input(type="text", value=listings.info.thu)
+      label(for="fri") fri
+      input(type="text", value=listings.info.fri)
+      label(for="sat") sat
+      input(type="text", value=listings.info.sat)
+      label(for="sun") sun
+      input(type="text", value=listings.info.sun)
+      br
+      h2 Location
+      label(for="street") street
+      input(type="text", value=listings.info.street)
+      br
+      label(for="unit") unit
+      input(type="text", value=listings.info.unit)
+      br
+      label(for="city") city
+      input(type="text", value=listings.info.city)
+      br
+      label(for="zip") zip
+      input(type="text", value=listings.info.zip)
+      br
+      label(for="geo") geo
+      input(type="text", value=listings.info.geo)
+      br
+      h2 Deal Info
+      label(for="offer") offer
+      input(type="text", value=listings.info.offer)
+      br
+      label(for="description") description
+      input(type="text", value=listings.info.description)
+      br
+      label(for="terms") terms
+      input(type="text", value=listings.info.terms)
+      br
+      label(for="expiration") expiration
+      input(type="text", value=listings.info.expiration)
+      br
+      button save
 
 
 

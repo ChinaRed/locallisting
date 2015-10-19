@@ -1,6 +1,9 @@
   <section class="listing_header">
     <div class="listing_banner">
-      <span class="banner_hl">explore with OUR|GUIDE</span>
+      <ul>
+        <li class="tags" ng-repeat="tag in listing.tags"><a href="#">{{tag}}</a></li>
+      </ul>
+      <span class="banner_hl">GUIDE</span>
     </div>  
     <div class="info_summary">
       <h2>{{listing.info.name}}</h2>

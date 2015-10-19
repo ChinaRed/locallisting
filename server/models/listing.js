@@ -3,7 +3,8 @@ var Schema = mongoose.Schema;
 
 var listingSchema = new Schema ({
   info : { 
-          name: String, 
+          name: String,
+          summary: String, 
           phone: String, 
           website: String,
           hours: {

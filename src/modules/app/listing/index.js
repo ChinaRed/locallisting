@@ -20,3 +20,5 @@ module.exports =
   })
   .controller('listingController', require('./listingController'))
   .controller('singleListingController', require('./singleListingController'));
+    
+  

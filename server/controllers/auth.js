@@ -43,6 +43,32 @@ passport.deserializeUser(function (id, done){
     done(err, user);
   });
 });
+
+//renders edit page
+router.get('/admin/edit/:id', ensureAuthenticated, function (req, res){
+  Listing.findOne({_id:req.params.id}, 
+    function (err, listings) {
+    res.render('edit', {
+      listings : listings
+    });
+  });
+});
+
+//edits listing
+router.put('edit/:id', ensureAuthenticated, function (req, res) {Listing.findOnAndUpdate({_id:req.params.id}, { $set:
+  {
+    name : req.params.name
+  }}, function (err, listings){
+    if (err) throw err;
+    res.redirect('/admin');
+  });
+});
+
+//renders add new listing page
+router.get('/admin/new_listing', function (req, res){
+  res.render('new_listing');
+});
+
 // renders login page
 router.get('/login', function (req, res){
   res.render('auth/login');

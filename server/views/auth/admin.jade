@@ -5,6 +5,5 @@ block content
 
   .listings
     each listing in listings
-      article.edit
-        h2.title!= listing.info.name
-        //- a(href="listings/edit/#{article._id}")
+      h2.title!= listing.info.name
+      a(href='admin/edit/#{listing._id}')!=listing.info.name
