@@ -81,7 +81,7 @@ router.post('/', function (req,res){
   });
   listing.save(function (err){
     if (err) throw err;
-    res.redirect("/");
+    res.redirect("/admin");
   });
 });
 
@@ -127,7 +127,7 @@ router.put('/:id', function (req,res){
     // tags: req.body.string 
             },
             function (err, listing){
-              res.redirect('/');  
+              res.redirect('/admin');  
   });
 });
 
