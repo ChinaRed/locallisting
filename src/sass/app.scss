@@ -1,9 +1,7 @@
-@import "partials/settings";
-@import "partials/reset";
+@import "utils/settings";
+@import "utils/reset";
 
-html{
-  font-family: $roboto;
-}
+@import "base/base";
 
 section.listing_header{
   max-width: 1000px;
