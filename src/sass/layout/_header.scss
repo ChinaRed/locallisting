@@ -1,0 +1,28 @@
+header{
+  // height: 80px;
+  margin-bottom: 10px;
+  padding: 20px 0 0;
+  color: $white;
+  text-align: center;
+  
+  .logo{
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+}
+
+nav{
+  padding: 20px 0;
+  text-align: center;
+
+  li{
+    padding: 20px;
+    display: inline;
+    border: 1px solid $la;
+    &:hover{
+      color: $teaser;
+      border: 1px solid $teaser;
+    }
+  }  
+}
