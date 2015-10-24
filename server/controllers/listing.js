@@ -38,6 +38,15 @@ router.get('/:id', function (req,res){
   });
 });
 
+// gets single listing
+router.get('/:language/:id', function (req,res){
+  Listing.find({ language: req.params.language, _id:req.params.id},
+    function (err, listing){
+      if(err) throw err;
+      res.json(listing);
+  });
+});
+
 // posts new listing to db
 router.post('/', function (req,res){
   var listing = new Listing(
