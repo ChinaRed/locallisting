@@ -9,14 +9,17 @@
   </head>
   <body>
     <header>
-      <div class="logo">OUR | GUIDE</div>
+      <div class="logo"><a ui-sref="/">OUR | GUIDE</a></div>
+      <nav>
+        <ul class="categories">
+          <li class="restaurant"><a ui-sref="#">Restaurant</a></li>
+          <li class="bars"><a ui-sref="#">Bars</a></li>
+          <li class="relaxation"><a ui-sref="#">Relaxation</a></li>
+          <li class="rentals"><a ui-sref="#">Rentals</a></li>
+        </ul>
+      </nav>
     </header>
-    <ul class="categories">
-      <li class="restaurant"><a ui-sref="">Restaurant</a></li>
-      <li class="bars"><a ui-sref="">Bars</a></li>
-      <li class="relaxation"><a ui-sref="">Relaxation</a></li>
-      <li class="rentals"><a ui-sref="">Rentals</a></li>
-    </ul>
+    
     <div class="wrapper">
       <div ui-view></div>
     </div>
