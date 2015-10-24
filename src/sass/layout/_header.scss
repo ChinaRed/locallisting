@@ -9,12 +9,14 @@ header{
     font-size: 2em;
     font-weight: bold;
     margin-bottom: 10px;
+    text-transform: uppercase;
   }
 }
 
 nav{
   padding: 20px 0;
   text-align: center;
+  @include slimFont;
 
   li{
     padding: 20px;

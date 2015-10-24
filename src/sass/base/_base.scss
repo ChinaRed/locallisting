@@ -8,6 +8,14 @@ body{
 }
 
 .wrapper{
-  width: 960px;
+  width: 660px;
   margin: auto;
+}
+
+h1, h2, h3{
+   @include slimFont;
+}
+
+h1{
+  font-size: 2em;
 }

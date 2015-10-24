@@ -1,8 +1,14 @@
-section.listing_header{
+.listing_container{
+  height: 250px;
+  border: 1px solid $white;
+}
+
+
+.listing_header{
   max-width: 1000px;
   margin: auto;
   // display: inline-block;
-
+  
   @media #{$small-only}{
     width: 100%;
     margin: auto;
