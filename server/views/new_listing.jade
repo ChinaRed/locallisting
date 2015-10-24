@@ -1,6 +1,18 @@
 extends ./layout
 block content
   form(action="/api/listings", method="POST")
+    h2 Language
+    label(for="language") language
+    input(type="text", id="language", name="language")
+    br
+    h2 category
+    label(for="category") category
+    input(type="text", id="category", name="category")
+    br
+    h2 region
+    label(for="region") region
+    input(type="text", id="region", name="region")
+    br
     h2 Business Information
     label(for="business_name") business name
     input(type="text", id="business_name", name="name")
@@ -15,20 +27,8 @@ block content
     input(type="text", id="website", name="URL")
     br
     h2 Hours
-    label(for="mon") mon
-    input(type="text", id="mon", name="mon")
-    label(for="tue") tue
-    input(type="text", id="tue", name="tue")
-    label(for="wed") wed
-    input(type="text", id="wed", name="wed")
-    label(for="thu") thu
-    input(type="text", id="thu", name="thu")
-    label(for="fri") fri
-    input(type="text", id="fri", name="fri")
-    label(for="sat") sat
-    input(type="text", id="sat", name="sat")
-    label(for="sun") sun
-    input(type="text", id="sun", name="sun")
+    label(for="hours") hours
+    input(type="text", id="hours", name="hours")
     br
     h2 Location
     label(for="street") street
@@ -40,11 +40,11 @@ block content
     label(for="city") city
     input(type="text", id="city", name="city")
     br
+    label(for="state") state
+    input(type="text", id="state", name="state")
+    br
     label(for="zip") zip
     input(type="text", id="zip", name="zip")
-    br
-    label(for="geo") geo
-    input(type="text", id="geo", name="geo")
     br
     h2 Deal Info
     label(for="offer") offer

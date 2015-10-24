@@ -51,18 +51,20 @@ router.get('/admin/edit/:id', ensureAuthenticated, function (req, res){
     res.render('edit', {
       listings : listings
     });
+    // if (err) throw err;
+    // res.redirect('/admin');
   });
 });
 
-//edits listing
-router.put('edit/:id', ensureAuthenticated, function (req, res) {Listing.findOnAndUpdate({_id:req.params.id}, { $set:
-  {
-    name : req.params.name
-  }}, function (err, listings){
-    if (err) throw err;
-    res.redirect('/admin');
-  });
-});
+// //edits listing
+// router.put('edit/:id', ensureAuthenticated, function (req, res) {Listing.findOnAndUpdate({_id:req.params.id}, { $set:
+//   {
+//     name : req.params.name
+//   }}, function (err, listings){
+//     if (err) throw err;
+//     res.redirect('/admin');
+//   });
+// });
 
 //renders add new listing page
 router.get('/admin/new_listing', function (req, res){

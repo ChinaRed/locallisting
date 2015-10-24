@@ -5,63 +5,63 @@ block content
     //- form(action="/api/listings/#{article._id}?_method="PUT", method="POST")
   .field
     form(action="/api/listings/#{listings._id}?_method=PUT" method="POST")
+      h2 Language
+      label(for="language") language
+      input(type="text", name="language", value=listings.language)
+      br
+      h2 Category
+      label(for="category") category
+      input(type="text", name="category", value=listings.category)
+      br
+      h2 region
+      label(for="region") region
+      input(type="text", name="region", value=listings.region)
+      br
       h2 Business Information
       label(for="business_name") business name
       input(type="text", name="name", value=listings.info.name)
       br
       label(for="business_summary") business summary 
-      input(type="text", value=listings.info.summary)
+      input(type="text", name="summary", value=listings.info.summary)
       br
       label(for="phone") phone
-      input(type="text", value=listings.info.phone)
+      input(type="text", name="phone", value=listings.info.phone)
       br
       label(for="website") website
-      input(type="text", value=listings.info.URL)
+      input(type="text", name='URL', value=listings.info.URL)
       br
       h2 Hours
-      label(for="mon") mon
-      input(type="text", value=listings.info.mon)
-      label(for="tue") tue
-      input(type="text", value=listings.info.tue)
-      label(for="wed") wed
-      input(type="text", value=listings.info.wed)
-      label(for="thu") thu
-      input(type="text", value=listings.info.thu)
-      label(for="fri") fri
-      input(type="text", value=listings.info.fri)
-      label(for="sat") sat
-      input(type="text", value=listings.info.sat)
-      label(for="sun") sun
-      input(type="text", value=listings.info.sun)
+      label(for="hours") hours
+      input(type="text", name='hours', value=listings.info.hours)
       br
       h2 Location
       label(for="street") street
-      input(type="text", value=listings.info.street)
+      input(type="text", name='street', value=listings.info.street)
       br
       label(for="unit") unit
-      input(type="text", value=listings.info.unit)
+      input(type="text", name='unit', value=listings.info.unit)
       br
       label(for="city") city
-      input(type="text", value=listings.info.city)
+      input(type="text", name='city', value=listings.info.city)
+      br
+      label(for="state") state
+      input(type="text", name='state', value=listings.info.state)
       br
       label(for="zip") zip
-      input(type="text", value=listings.info.zip)
-      br
-      label(for="geo") geo
-      input(type="text", value=listings.info.geo)
+      input(type="text", name='zip', value=listings.info.zip)
       br
       h2 Deal Info
       label(for="offer") offer
-      input(type="text", value=listings.info.offer)
+      input(type="text", name='offer', value=listings.info.offer)
       br
       label(for="description") description
-      input(type="text", value=listings.info.description)
+      input(type="text", name='description', value=listings.info.description)
       br
       label(for="terms") terms
-      input(type="text", value=listings.info.terms)
+      input(type="text", name='terms', value=listings.info.terms)
       br
       label(for="expiration") expiration
-      input(type="text", value=listings.info.expiration)
+      input(type="text", name='expiration', value=listings.info.expiration)
       br
       button save
 
