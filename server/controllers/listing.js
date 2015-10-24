@@ -51,20 +51,15 @@ router.get('/:language/:id', function (req,res){
 router.post('/', function (req,res){
   var listing = new Listing(
   { 
+    language : req.body.language,
+    category : req.body.category,
+    region : req.body.category,
     info : { 
           name: req.body.name, 
           summary: req.body.summary,
           phone: req.body.phone, 
           website: req.body.URL,
-          hours: {
-                  mon: req.body.mon,
-                  tue: req.body.tue,
-                  wed: req.body.wed,
-                  thu: req.body.thu,
-                  fri: req.body.fri,
-                  sat: req.body.sat,
-                  sun: req.body.sun
-                },
+          hours: req.body.hours,
           image: req.body.photoURL
          },
   location: {
@@ -98,28 +93,23 @@ router.post('/', function (req,res){
 router.put('/:id', function (req,res){
   Listing.update({_id:req.params.id},
     {
+      language : req.body.language,
+      category : req.body.category,
+      region : req.body.region,
       info : { 
             name: req.body.name, 
             summary: req.body.summary,
             phone: req.body.phone, 
             website: req.body.URL,
-            hours: {
-                    mon: req.body.mon,
-                    tue: req.body.tue,
-                    wed: req.body.wed,
-                    thu: req.body.thu,
-                    fri: req.body.fri,
-                    sat: req.body.sat,
-                    sun: req.body.sun
-                  },
+            hours: req.body.hours,
             image: req.body.photoURL
            },
     location: {
             street: req.body.street,
             unit: req.body.unit,
             city: req.body.city,
+            state: req.body.state,
             zip: req.body.zip,
-            geo: req.body.geo
             },
     coupon: {
             offer: req.body.offer,

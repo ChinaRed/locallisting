@@ -6,6 +6,7 @@ module.exports = /*@ngInject*/
 
     ListingService.all().then(function (data) {
       $scope.listings = data.data;
+      console.log('data',data);
     });
   };
 
