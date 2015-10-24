@@ -10,7 +10,7 @@ var mongoose = require ('mongoose');
 var listings = require('./controllers/listing');
 var auth = require('./controllers/auth');
 
-mongoose.connect('mongodb://chinared:'+process.env.DBPASS+'@ds061371.mongolab.com:61371/locallistings');
+mongoose.connect('mongodb://chinared:'+ process.env.DBPASS +'@ds061371.mongolab.com:61371/locallistings');
 
 // middleware 
 app.use(function (req, res, next){
