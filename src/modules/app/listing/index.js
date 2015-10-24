@@ -9,12 +9,12 @@ module.exports =
     $stateProvider
     .state('listings', {
       url: '',
-      templateUrl: 'app/listing/layout.html',
+      templateUrl: 'app/listing/views/layout.html',
       controller: 'listingController'
     })
     .state('listing', {
       url: '/listing/:id',
-      templateUrl: 'app/listing/listing.html',
+      templateUrl: 'app/listing/views/listing.html',
       controller: 'singleListingController'
     });
   })

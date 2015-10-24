@@ -14,19 +14,9 @@
       <div class="bus_hours">
         <h2>{{listing.info.hours}}</h2>
       </div>
-      <div class="phone_number">
-        <h2>{{listing.info.phone}}</h2>
-      </div>
-      <div class="website">
-        <a href="#">{{listing.info.website}}</a>
-      </div>
       <div class="location">
-        <h2>{{listing.location.street}} <span>{{listing.location.unit}}</span></h2>
-        <h2>{{listing.location.city}}</h2>
-        <h2>{{listing.location.state}}</h2>
-        <h2>{{listing.location.zip}}</h2>
+        <h2>{{listing.location.city}} | {{listing.location.zip}}</h2>
       </div>
-      <div class="map">map goes here</div>
     </section>
     <section class="coupon">
       <div "title"></div>
@@ -35,15 +25,7 @@
         <p class="description">{{listing.coupon.description}}</p>
         <p class="terms">{{listing.coupon.terms}}</p>
         <p class="expiration">{{listing.coupon.expiration}}</p>
-        <div>
-          <img src="coupon_image">coupon image goes here
-        </div>
       </div>
-    </section>
-    <section class="rating">
-      <div class="author">{{listing.reviews.name}}</div>
-      <div class="rating">{{listing.reviews.rating}}</div>
-      <div class="review">{{listing.reviews.review}}</div>
     </section>
   </div> <!-- .listing_container -->
 </div>
