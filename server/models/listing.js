@@ -2,28 +2,23 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var listingSchema = new Schema ({
+  language : String,
+  category : String,
+  region: String,
   info : { 
           name: String,
           summary: String, 
           phone: String, 
           website: String,
-          hours: {
-                  mon: String,
-                  tue: String,
-                  wed: String,
-                  thu: String,
-                  fri: String,
-                  sat: String,
-                  sun: String
-                },
+          hours: String,
           image: String
          },
   location: {
           street: String,
           unit: String,
           city: String,
-          zip: String,
-          geo: String
+          state: String,
+          zip: String
           },
   coupon: {
           offer: String,
