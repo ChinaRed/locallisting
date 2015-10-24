@@ -30,8 +30,17 @@ router.get('/new_listing',function (req,res){
 });
 
 // gets single listing
-router.get('/:id', function (req,res){
-  Listing.find({_id:req.params.id},
+// router.get('/:id', function (req,res){
+//   Listing.find({_id:req.params.id},
+//     function (err, listing){
+//       if(err) throw err;
+//       res.json(listing);
+//   });
+// });
+
+// gets single listing
+router.get('/:language/:id', function (req,res){
+  Listing.find({ language: req.params.language, _id:req.params.id},
     function (err, listing){
       if(err) throw err;
       res.json(listing);
