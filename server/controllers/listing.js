@@ -123,7 +123,7 @@ router.put('/:id', function (req,res){
 
 // delete listing
 router.delete('/:id', function ( req, res ){
-  Listing.remove({ _id: req.params.id }, function ( err, item ){
+  Listing.remove({ _id:req.params.id }, function ( err, item ){
     if (err) return handleError( err );
     console.log('DELETED');
     res.redirect('/admin');
@@ -131,6 +131,3 @@ router.delete('/:id', function ( req, res ){
 });
 
 module.exports = router;
-
-
-
