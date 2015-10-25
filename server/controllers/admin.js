@@ -51,6 +51,7 @@ router.get('/logout', function (req, res){
 //     });
 //   }
 // ));
+// });
 
 passport.serializeUser(function (user, done){
   done(null, user.id);
