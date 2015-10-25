@@ -7,3 +7,5 @@ block content
     each listing in listings
       h2.title!= listing.info.name
       a(href='admin/edit/#{listing._id}')!=listing.info.name
+      form(action="/api/listings/#{listing._id}?_method=DELETE" method="POST")
+        button(type='submit') Delete

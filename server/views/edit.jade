@@ -28,7 +28,10 @@ block content
       input(type="text", name="phone", value=listings.info.phone)
       br
       label(for="website") website
-      input(type="text", name='URL', value=listings.info.URL)
+      input(type="text", name='URL', value=listings.info.website)
+      br
+      label(for="main_image") main_image
+      input(type="text", name='main_image', value=listings.info.main_image)
       br
       h2 Hours
       label(for="hours") hours
@@ -36,32 +39,35 @@ block content
       br
       h2 Location
       label(for="street") street
-      input(type="text", name='street', value=listings.info.street)
+      input(type="text", name='street', value=listings.location.street)
       br
       label(for="unit") unit
-      input(type="text", name='unit', value=listings.info.unit)
+      input(type="text", name='unit', value=listings.location.unit)
       br
       label(for="city") city
-      input(type="text", name='city', value=listings.info.city)
+      input(type="text", name='city', value=listings.location.city)
       br
       label(for="state") state
-      input(type="text", name='state', value=listings.info.state)
+      input(type="text", name='state', value=listings.location.state)
       br
       label(for="zip") zip
-      input(type="text", name='zip', value=listings.info.zip)
+      input(type="text", name='zip', value=listings.location.zip)
       br
       h2 Deal Info
       label(for="offer") offer
-      input(type="text", name='offer', value=listings.info.offer)
+      input(type="text", name='offer', value=listings.coupon.offer)
       br
       label(for="description") description
-      input(type="text", name='description', value=listings.info.description)
+      input(type="text", name='description', value=listings.coupon.description)
       br
       label(for="terms") terms
-      input(type="text", name='terms', value=listings.info.terms)
+      input(type="text", name='terms', value=listings.coupon.terms)
       br
       label(for="expiration") expiration
-      input(type="text", name='expiration', value=listings.info.expiration)
+      input(type="text", name='expiration', value=listings.coupon.expiration)
+      br
+      label(for="coupon_image") coupon_image
+      input(type="text", name='coupon_image', value=listings.coupon.coupon_image)
       br
       button save
 

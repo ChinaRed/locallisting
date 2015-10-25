@@ -11,7 +11,7 @@ var listingSchema = new Schema ({
           phone: String, 
           website: String,
           hours: String,
-          image: String
+          main_image: String
          },
   location: {
           street: String,
@@ -25,7 +25,7 @@ var listingSchema = new Schema ({
           description: String,
           terms: String,
           expiration: Date,
-          image: String
+          coupon_image: String
           }
   // reviews: {
   //         name: String,

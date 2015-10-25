@@ -38,6 +38,15 @@ router.get('/:id', function (req,res){
   });
 });
 
+// gets single listing
+router.get('/:language/:id', function (req,res){
+  Listing.find({ language: req.params.language, _id:req.params.id},
+    function (err, listing){
+      if(err) throw err;
+      res.json(listing);
+  });
+});
+
 // posts new listing to db
 router.post('/', function (req,res){
   var listing = new Listing(
@@ -93,7 +102,7 @@ router.put('/:id', function (req,res){
             phone: req.body.phone, 
             website: req.body.URL,
             hours: req.body.hours,
-            image: req.body.photoURL
+            main_image: req.body.main_image
            },
     location: {
             street: req.body.street,
@@ -107,7 +116,7 @@ router.put('/:id', function (req,res){
             description: req.body.description,
             terms: req.body.terms,
             expiration: req.body.date,
-            image: req.body.photoURL
+            coupon_image: req.body.coupon_image
             }
     // reviews: {
     //         author: req.body.name,
@@ -123,7 +132,7 @@ router.put('/:id', function (req,res){
 
 // delete listing
 router.delete('/:id', function ( req, res ){
-  Listing.remove({ _id: req.params.id }, function ( err, item ){
+  Listing.remove({ _id:req.params.id }, function ( err, item ){
     if (err) return handleError( err );
     console.log('DELETED');
     res.redirect('/admin');
@@ -131,6 +140,3 @@ router.delete('/:id', function ( req, res ){
 });
 
 module.exports = router;
-
-
-

@@ -51,8 +51,6 @@ router.get('/admin/edit/:id', ensureAuthenticated, function (req, res){
     res.render('edit', {
       listings : listings
     });
-    // if (err) throw err;
-    // res.redirect('/admin');
   });
 });
 
