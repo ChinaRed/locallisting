@@ -1,9 +1,13 @@
 header{
   // height: 80px;
-  margin-bottom: 10px;
+  a:hover{
+    color: $white;
+  }
+  margin-bottom: 20px;
   padding: 20px 0 10px;
   color: $white;
   text-align: center;
+  background-color: $la;
   
   .logo{
     font-size: 2em;
@@ -23,9 +27,6 @@ nav{
     padding-bottom: 10px;
     display: inline;
     border: 1px solid $la;
-    a:hover{
-      color: $white;
-    }
     &:hover{
       color: $teaser;
       border-bottom: 1px solid $teaser;

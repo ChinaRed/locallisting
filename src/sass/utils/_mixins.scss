@@ -20,3 +20,9 @@
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
 }
+
+// @mixin boxShadow($color){
+//   -moz-box-shadow: 0 15px 5px $color;
+// -webkit-box-shadow: 0 15px 5px $color;
+// box-shadow: 0 15px 5px $color;
+// }
