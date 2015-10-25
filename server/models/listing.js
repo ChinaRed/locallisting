@@ -18,7 +18,9 @@ var listingSchema = new Schema ({
           unit: String,
           city: String,
           state: String,
-          zip: String
+          zip: String,
+          latitude: String,
+          longitude: String
           },
   coupon: {
           offer: String,

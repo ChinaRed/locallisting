@@ -74,7 +74,8 @@ router.post('/', function (req,res){
           unit: req.body.unit,
           city: req.body.city,
           zip: req.body.zip,
-          geo: req.body.geo
+          latitude: req.body.latitude,
+          longitude: req.body.longitude
           },
   coupon: {
           offer: req.body.offer,
@@ -117,6 +118,8 @@ router.put('/:id', function (req,res){
             city: req.body.city,
             state: req.body.state,
             zip: req.body.zip,
+            latitude: req.body.latitude,
+            longitude: req.body.longitude
             },
     coupon: {
             offer: req.body.offer,
