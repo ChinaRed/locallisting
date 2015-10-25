@@ -27,3 +27,12 @@ h1{
 .right{
   float: right;
 }
+
+a{
+  text-decoration: none;
+  color: $white;
+
+  &:hover{
+    color: $looted;
+  }
+}
