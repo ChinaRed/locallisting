@@ -24,6 +24,13 @@ router.get("/",function (req,res){
   });
 });
 
+router.get("/lang/:lang", function (req,res){
+  Listing.find({ language: req.params.lang }, function (err, listings) {
+    if(err) throw err;
+    res.json(listings);
+  });
+});
+
 // creates new listing
 router.get('/new_listing',function (req,res){
   res.render('new_listing');
@@ -38,7 +45,7 @@ router.get('/:id', function (req,res){
   });
 });
 
-// gets single listing
+// gets single lang listing
 router.get('/:language/:id', function (req,res){
   Listing.find({ language: req.params.language, _id:req.params.id},
     function (err, listing){
@@ -134,7 +141,6 @@ router.put('/:id', function (req,res){
 router.delete('/:id', function ( req, res ){
   Listing.remove({ _id:req.params.id }, function ( err, item ){
     if (err) return handleError( err );
-    console.log('DELETED');
     res.redirect('/admin');
   });
 });

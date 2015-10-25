@@ -6,6 +6,6 @@ module.exports = /*@ngInject*/
 
     ListingService.get($state.params.id).then(function (data) {
       $scope.listing = data.data[0];
-      console.log('$scope.listings',$scope.listing);
+      console.log('$scope.listing',$scope.listing);
     });
   };
