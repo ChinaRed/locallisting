@@ -29,6 +29,7 @@ module.exports =
     })
     .state('storeAuthToken', {
       url: '/store-auth-token/:token',
+      templateUrl: 'app/listing/views/request.html',
       controller: 'tokenController'
     });
   })

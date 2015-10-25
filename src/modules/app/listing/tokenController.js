@@ -1,10 +1,8 @@
 'use strict';
 
 module.exports =
- function tokenController ($stateParams, $state, $http){
+ function tokenController ($scope, $stateParams, $state, $http){
     localStorage.auth_token = $stateParams.token;
-    console.log('HELLLLO');
-    console.log('localStorage.auth_token',localStorage.auth_token);
     $http({
       method: 'POST',
       // url: 'https://sandbox-api.uber.com/v1/requests',
@@ -14,7 +12,6 @@ module.exports =
       // },
       data: {
         auth_token: localStorage.auth_token,
-        blah: 'hey im from data',
         locationId: localStorage.locationId
         // start_latitude : 21.292384,
         // start_longitude : -157.8528565,
@@ -25,6 +22,7 @@ module.exports =
     })
     .then(function successCallback (res) {
       console.log('success', res);
+      $scope.data = res.data;
     });
   };
 
