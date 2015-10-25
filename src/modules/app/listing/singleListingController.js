@@ -10,5 +10,7 @@ module.exports = /*@ngInject*/
       
       $scope.listingImage = data.data[0].info.main_image;
       console.log('$scope.listingImage',$scope.listingImage);
+
+      $scope.couponImage = data.data[0].coupon.coupon_image;
     });
   };

@@ -6,23 +6,12 @@
     <div class="info_summary">
       <p>{{listing.info.summary}}</p>
     </div>
-<<<<<<< HEAD
+    
     <div class="uber">
       <!--uber button-->
       <button>Take me there</button>
-=======
-  </section>
-  <section class="bus_info">
-    <div class="bus_hours">
-      <h2>{{listing.info.hours}}</h2>
     </div>
-    <div class="phone_number">
-      <h2>{{listing.info.phone}}</h2>
-    </div>
-    <div class="website">
-      <a href="{{listing.info.website}}">{{listing.info.website}}</a>
->>>>>>> 210686d5e3694261c629c20f20308659c8dee3ce
-    </div>
+
     <div class="info">
       <ul>
         <li class="bus_hours">
@@ -41,7 +30,7 @@
     </div>
   </section><!--end of businesss info-->
 
-  <section class="listing_coupon" style="background-image: url(http://g.fastcompany.net/multisite_files/fastcompany/poster/2014/01/3024591-poster-p-1-beers-gets-the-cheers.jpg)">
+  <section class="listing_coupon" ng-style="{'background-image': 'url(' + couponImage + ')'}">
     <div class="details">
       <p class="offer">{{listing.coupon.offer}}</p>
       <p class="description">{{listing.coupon.description}}</p>
@@ -51,6 +40,7 @@
   </section><!--coupon -->
 
   <section class="rating">
+    <h1>Ratings</h1>
     <div class="author">{{listing.reviews.name}}</div>
     <div class="rating">{{listing.reviews.rating}}</div>
     <div class="review">{{listing.reviews.review}}</div>
