@@ -23,13 +23,14 @@ app.use(function (req, res, next){
   res.set("Access-Control-Allow-Origin","*");
   next();
 });
-app.use('/api/',auth);
 
 app.use(bodyParser.urlencoded({extend:true}));
+app.use(bodyParser.json());
 app.use(session({ secret : 'keyboard cat'}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride('_method'));
+app.use('/api/',auth);
 app.set('view engine','jade');
 app.set('views',process.cwd() + '/server/views');
 app.use('/api/listings', listings);

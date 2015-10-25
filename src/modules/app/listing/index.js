@@ -24,13 +24,12 @@ module.exports =
     })
     .state('storeAuthToken', {
       url: '/store-auth-token/:token',
-      controller: function($stateParams){
-        localStorage.auth_token = $stateParams.token;
-      }
+      controller: 'tokenController'
     });
   })
   .controller('listingController', require('./listingController'))
   .controller('langList', require('./langList'))
-  .controller('singleListingController', require('./singleListingController'));
+  .controller('singleListingController', require('./singleListingController'))
+   .controller('tokenController', require('./tokenController'));
     
   

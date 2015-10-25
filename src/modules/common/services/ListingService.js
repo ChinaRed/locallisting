@@ -12,9 +12,9 @@ module.exports = /*@ngInject*/
       get : function(listing_id){
         return $http.get('http://localhost:2233/api/listings/' + listing_id);
       },
-
       callUber: function () {
-        return $http.get('/api/uberlogin');
+        console.log('callUber');
+        return $http.get('http://localhost:2233/api/uberlogin');
       }
     };
   };
