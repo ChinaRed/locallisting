@@ -25,8 +25,17 @@ router.get("/",function (req,res){
   });
 });
 
+// renders listings by language
 router.get("/lang/:lang", function (req,res){
   Listing.find({ language: req.params.lang }, function (err, listings) {
+    if(err) throw err;
+    res.json(listings);
+  });
+});
+
+// renders listings by category
+router.get("/category/:category", function (req,res){
+  Listing.find({ category: req.params.category }, function (err, listings) {
     if(err) throw err;
     res.json(listings);
   });

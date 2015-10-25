@@ -17,6 +17,11 @@ module.exports =
       templateUrl: 'app/listing/views/layout.html',
       controller: 'langList'
     })
+    .state('categoryList', {
+      url: '/category/:category',
+      templateUrl: 'app/listing/views/layout.html',
+      controller: 'categoryList'
+    })
     .state('listing', {
       url: '/listings/:id',
       templateUrl: 'app/listing/views/listing.html',
@@ -30,6 +35,8 @@ module.exports =
   .controller('listingController', require('./listingController'))
   .controller('langList', require('./langList'))
   .controller('singleListingController', require('./singleListingController'))
-   .controller('tokenController', require('./tokenController'));
+   .controller('tokenController', require('./tokenController'))
+  .controller('categoryList', require('./categoryList'));
+
     
   
