@@ -23,6 +23,9 @@ nav{
     padding-bottom: 10px;
     display: inline;
     border: 1px solid $la;
+    a:hover{
+      color: $white;
+    }
     &:hover{
       color: $teaser;
       border-bottom: 1px solid $teaser;

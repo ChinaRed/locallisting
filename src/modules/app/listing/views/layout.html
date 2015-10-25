@@ -1,32 +1,24 @@
 <div ng-repeat="listing in listings">
- <a ui-sref="listing({id:listing._id})">
-  <div class="listing_container">
-    <section class="header">
-      <div class="title">
-        <h1>{{listing.info.name}}</h1>
-      </div>
-      <div class="tags">
-        <ul>
-          <li ng-repeat="tag in listing.tags"><a href="#">{{tag}}</a></li>
-        </ul>
-      </div>
-    </section>
-    <section class="bus_info">
-      <div class="bus_hours">
-        <h2>{{info.hours.today}}</h2>
-      </div>
-      <div class="location">
+  <a ui-sref="listing({id:listing._id})">
+    <div class="listing_container">
+      <section class="header">
+        <div class="title">
+          <h1>{{listing.info.name}}</h1>
+        </div>
+      </section>
+      <section class="bus_info">
+        <h2>{{listing.info.hours}}</h2>
         <h2>{{listing.location.city}} | {{listing.location.zip}}</h2>
-      </div>
-    </section>
-    <section class="coupon">
-      <div "title"></div>
-      <div "details">
-        <p class="offer">{{listing.coupon.offer}}</p>
-        <p class="description">{{listing.coupon.description}}</p>
-        <p class="terms">{{listing.coupon.terms}}</p>
-        <p class="expiration">{{listing.coupon.expiration}}</p>
-      </div>
-    </section>
-  </div> </a><!-- .listing_container -->
+      </section>
+      <section class="coupon">
+        <div "title"></div>
+        <div "details">
+          <h2 class="offer">{{listing.coupon.offer}}</h2>
+          <p class="description">{{listing.coupon.description}}</p>
+          <p class="terms">{{listing.coupon.terms}}</p>
+          <p class="expiration">{{listing.coupon.expiration}}</p>
+        </div>
+      </section>
+    </div> 
+  </a><!-- .listing_container -->
 </div>
