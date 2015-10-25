@@ -1,4 +1,4 @@
-<div ng-repeat="listing in listings">
+<div ng-repeat="listing in listings | filter:query | orderBy: 'info.name'">
   <a ui-sref="listing({id:listing._id})">
     <div class="listing_container">
       <section class="header">
