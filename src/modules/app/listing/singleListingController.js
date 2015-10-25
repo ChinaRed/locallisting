@@ -7,5 +7,8 @@ module.exports = /*@ngInject*/
     ListingService.get($state.params.id).then(function (data) {
       $scope.listing = data.data[0];
       console.log('$scope.listings',$scope.listing);
+      
+      $scope.listingImage = data.data[0].info.main_image;
+      console.log('$scope.listingImage',$scope.listingImage);
     });
   };
