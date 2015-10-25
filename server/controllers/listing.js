@@ -102,7 +102,7 @@ router.put('/:id', function (req,res){
             phone: req.body.phone, 
             website: req.body.URL,
             hours: req.body.hours,
-            image: req.body.photoURL
+            main_image: req.body.main_image
            },
     location: {
             street: req.body.street,
@@ -116,7 +116,7 @@ router.put('/:id', function (req,res){
             description: req.body.description,
             terms: req.body.terms,
             expiration: req.body.date,
-            image: req.body.photoURL
+            coupon_image: req.body.coupon_image
             }
     // reviews: {
     //         author: req.body.name,

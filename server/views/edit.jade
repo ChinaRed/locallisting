@@ -30,6 +30,9 @@ block content
       label(for="website") website
       input(type="text", name='URL', value=listings.info.URL)
       br
+      label(for="main_image") main_image
+      input(type="text", name='main_image', value=listings.info.main_image)
+      br
       h2 Hours
       label(for="hours") hours
       input(type="text", name='hours', value=listings.info.hours)
@@ -62,6 +65,9 @@ block content
       br
       label(for="expiration") expiration
       input(type="text", name='expiration', value=listings.info.expiration)
+      br
+      label(for="coupon_image") coupon_image
+      input(type="text", name='coupon_image', value=listings.info.coupon_image)
       br
       button save
 
