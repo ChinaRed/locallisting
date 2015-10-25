@@ -42,7 +42,7 @@ router.get("/category/:category", function (req,res){
 });
 
 // creates new listing
-router.get('/new_listing',function (req,res){
+router.get('admin/new_listing',function (req,res){
   res.render('new_listing');
 });
 

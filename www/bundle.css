@@ -117,22 +117,43 @@ a {
   position: absolute;
   bottom: -340px;
   left: 50%;
+  -webkit-transform: translateX(-50%);
   transform: translateX(-50%); }
 
 .floating-logo {
+  -webkit-animation-name: floating-logo;
   animation-name: floating-logo;
+  -webkit-animation-duration: 2s;
   animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out; }
 
-@keyframes floating-logo {
+@-webkit-keyframes floating-logo {
   from {
+    -webkit-transform: translate(-50%, 0);
     transform: translate(-50%, 0); }
 
   50% {
+    -webkit-transform: translate(-50%, 20px);
     transform: translate(-50%, 20px); }
 
   to {
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0); } }
+
+@keyframes floating-logo {
+  from {
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0); }
+
+  50% {
+    -webkit-transform: translate(-50%, 20px);
+    transform: translate(-50%, 20px); }
+
+  to {
+    -webkit-transform: translate(-50%, 0);
     transform: translate(-50%, 0); } }
 
 header {
