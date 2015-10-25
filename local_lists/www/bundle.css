@@ -1,0 +1,189 @@
+/* Basic Settings for uHero */
+/* Fonts */
+/*Inline Media Queries*/
+/* Media Queries 
+small : max-width: 640px
+medium : min-width: 641px, max-width: 960px
+large : min-width: 961px
+*/
+/* Colors */
+/* for dark headers */
+/* Default Map Color */
+/* Pinks? */
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+html {
+  font-family: "Roboto Condensed", sans-serif; }
+
+body {
+  background-color: #201132;
+  color: #fff; }
+
+.wrapper {
+  width: 660px;
+  margin: auto; }
+
+h1, h2, h3 {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase; }
+
+h1 {
+  font-size: 2em; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+header {
+  margin-bottom: 10px;
+  padding: 20px 0 10px;
+  color: #fff;
+  text-align: center; }
+  header .logo {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase; }
+
+nav {
+  padding: 20px 0;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase; }
+  nav li {
+    padding: 20px;
+    padding-bottom: 10px;
+    display: inline;
+    border: 1px solid #1a1a1a; }
+    nav li:hover {
+      color: #73a5e2;
+      border-bottom: 1px solid #73a5e2; }
+
+.listing_container {
+  height: 250px;
+  border: 1px solid #fff; }
+
+/*Single Listing */
+.listing_header {
+  background-color: grey;
+  margin: auto;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  @media only screen and (max-width: 760px) {
+    .listing_header {
+      width: 100%;
+      margin: auto; } }
+  .listing_header .hero_title {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center; }
+
+.come-in {
+  width: 60%;
+  margin: auto;
+  padding: 70px 0; }
+
+.listing_coupon img {
+  width: 100%; }
+
+section.header {
+  background-color: lightyellow; }
+  section.header h2 a {
+    font-size: 1.5em; }
+
+.bus_info {
+  background-color: lightpink;
+  padding: 20px 30px; }
+  .bus_info:before,
+  .bus_info:after {
+    content: '';
+    display: table; }
+  .bus_info:after {
+    clear: both; }
+  .bus_info p {
+    line-height: 1.7;
+    font-size: 1.4em; }
+  .bus_info .info_summary {
+    margin-bottom: 30px; }
+
+.info ul {
+  text-align: center; }
+  .info ul li {
+    display: inline-block;
+    padding: 10px; }
+
+.uber {
+  display: block;
+  margin-bottom: 20px;
+  text-align: center; }
+  .uber button {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 15px 40px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    background-color: #EBEDDE;
+    border: 1px solid #EBEDDE; }
+    .uber button:hover {
+      color: #fff;
+      background-color: #201132;
+      border: 1px solid #201132; }
+
+.listing_coupon {
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .listing_coupon .details {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center; }
+
+section.coupon {
+  background-color: lightgreen; }
+
+section.rating {
+  background-color: lightsalmon;
+  margin-bottom: 35px; }
