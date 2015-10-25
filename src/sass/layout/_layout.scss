@@ -1,33 +1,41 @@
-section.listing_header{
-  max-width: 1000px;
+.listing_container{
+  height: 250px;
+  border: 1px solid $white;
+}
+
+/*Single Listing */
+
+.listing_header{
+  background-color: grey;
   margin: auto;
-  // display: inline-block;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   @media #{$small-only}{
     width: 100%;
     margin: auto;
   }
+
+  .hero_title{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    text-align: center; 
+  }
+}
+.come-in {
+  width: 60%;
+  margin: auto;
+  padding: 70px 0;
 }
 
-div.listing_banner{
-  background-color: grey;
-  width: 100%;
-  height: 400px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  // display: inline-block;
-
-    span{
-      color: white;
-      font-size: 1.5em;
-      margin-left: 10%;
-      margin-top: 70%;
-    }
-
-  @media #{$small-only}{
+.listing_coupon{
+  img{
     width: 100%;
   }
 }
+
 
 section.header{
   background-color: lightyellow;
@@ -39,8 +47,61 @@ section.header{
   }
 }
 
-section.bus_info{
+.bus_info{
+  @include clearfix;
   background-color: lightpink;
+  // height: 200px;
+  padding: 20px 30px;
+
+  p{
+    line-height: 1.7;
+    font-size: 1.4em;
+  }
+  
+  .info_summary{
+    margin-bottom: 30px;
+  }
+}
+
+.info{
+  ul{
+    text-align: center;
+    li{
+      display:inline-block;
+      padding: 10px;
+    }
+  }
+}
+
+.uber{
+  display: block;
+  margin-bottom: 20px;
+  text-align: center;
+  button{
+    @include slimFont;
+    padding: 15px 40px;
+    @include borderRadius(10px);
+    background-color: $light_grey;
+    border: 1px solid $light_grey;
+
+    &:hover{
+      color: $white;
+      background-color: $looted;
+      border: 1px solid $looted;
+    }
+  }
+}
+
+.listing_coupon{
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .details{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    text-align: center; 
+  }
 }
 
 section.coupon{

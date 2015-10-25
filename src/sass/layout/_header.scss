@@ -1,7 +1,7 @@
 header{
   // height: 80px;
   margin-bottom: 10px;
-  padding: 20px 0 0;
+  padding: 20px 0 10px;
   color: $white;
   text-align: center;
   
@@ -9,20 +9,23 @@ header{
     font-size: 2em;
     font-weight: bold;
     margin-bottom: 10px;
+    text-transform: uppercase;
   }
 }
 
 nav{
   padding: 20px 0;
   text-align: center;
+  @include slimFont;
 
   li{
     padding: 20px;
+    padding-bottom: 10px;
     display: inline;
     border: 1px solid $la;
     &:hover{
       color: $teaser;
-      border: 1px solid $teaser;
+      border-bottom: 1px solid $teaser;
     }
   }  
 }

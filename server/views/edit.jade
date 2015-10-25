@@ -28,7 +28,7 @@ block content
       input(type="text", name="phone", value=listings.info.phone)
       br
       label(for="website") website
-      input(type="text", name='URL', value=listings.info.URL)
+      input(type="text", name='URL', value=listings.info.website)
       br
       label(for="main_image") main_image
       input(type="text", name='main_image', value=listings.info.main_image)
@@ -55,19 +55,19 @@ block content
       br
       h2 Deal Info
       label(for="offer") offer
-      input(type="text", name='offer', value=listings.info.offer)
+      input(type="text", name='offer', value=listings.coupon.offer)
       br
       label(for="description") description
-      input(type="text", name='description', value=listings.info.description)
+      input(type="text", name='description', value=listings.coupon.description)
       br
       label(for="terms") terms
-      input(type="text", name='terms', value=listings.info.terms)
+      input(type="text", name='terms', value=listings.coupon.terms)
       br
       label(for="expiration") expiration
-      input(type="text", name='expiration', value=listings.info.expiration)
+      input(type="text", name='expiration', value=listings.coupon.expiration)
       br
       label(for="coupon_image") coupon_image
-      input(type="text", name='coupon_image', value=listings.info.coupon_image)
+      input(type="text", name='coupon_image', value=listings.coupon.coupon_image)
       br
       button save
 
