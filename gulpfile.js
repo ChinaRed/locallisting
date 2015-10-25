@@ -1,4 +1,4 @@
-// require('./gulp');
+require('./gulp');
 
 // var gulp = require('gulp');
 // var gutil = require('gulp-util');

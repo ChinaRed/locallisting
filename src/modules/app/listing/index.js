@@ -21,6 +21,12 @@ module.exports =
       url: '/listings/:id',
       templateUrl: 'app/listing/views/listing.html',
       controller: 'singleListingController'
+    })
+    .state('storeAuthToken', {
+      url: '/store-auth-token/:token',
+      controller: function($stateParams){
+        localStorage.auth_token = $stateParams.token;
+      }
     });
   })
   .controller('listingController', require('./listingController'))

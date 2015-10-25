@@ -134,8 +134,7 @@ section.header {
 .bus_info {
   background-color: lightpink;
   padding: 20px 30px; }
-  .bus_info:before,
-  .bus_info:after {
+  .bus_info:before, .bus_info:after {
     content: '';
     display: table; }
   .bus_info:after {
