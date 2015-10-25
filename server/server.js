@@ -6,13 +6,17 @@ var methodOverride = require('method-override');
 var app = express();
 var PORT = process.env.PORT || 3000;
 
+var uberServerToken = process.env.UBER_SERVER_TOKEN;
+var uberClientID = process.env.UBER_CLIENT_ID;
+var uberClientSecret = process.env.UBER_CLIENT_SECRET;
+
 var mongoose = require ('mongoose');
 var listings = require('./controllers/listing');
 var auth = require('./controllers/auth');
 
 mongoose.connect('mongodb://chinared:'+ process.env.DBPASS +'@ds061371.mongolab.com:61371/locallistings');
 
-// middleware 
+// middleware
 app.use(function (req, res, next){
   res.set("Access-Control-Allow-Origin","*");
   next();
