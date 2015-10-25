@@ -6,4 +6,5 @@ release
 tmp
 bower_components
 .env
-www
+www/bundle.js
+www/bundle.css
