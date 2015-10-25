@@ -9,8 +9,8 @@ var listingSchema = new Schema ({
           name: String,
           summary: String, 
           phone: String, 
-          website: String,
           hours: String,
+          website: String,
           main_image: String
          },
   location: {
@@ -18,7 +18,9 @@ var listingSchema = new Schema ({
           unit: String,
           city: String,
           state: String,
-          zip: String
+          zip: String,
+          latitude: String,
+          longitude: String
           },
   coupon: {
           offer: String,

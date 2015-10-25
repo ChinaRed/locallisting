@@ -65,23 +65,24 @@ router.post('/', function (req,res){
           name: req.body.name, 
           summary: req.body.summary,
           phone: req.body.phone, 
-          website: req.body.URL,
+          website: req.body.website,
           hours: req.body.hours,
-          image: req.body.photoURL
+          main_image: req.body.main_image
          },
   location: {
           street: req.body.street,
           unit: req.body.unit,
           city: req.body.city,
           zip: req.body.zip,
-          geo: req.body.geo
+          latitude: req.body.latitude,
+          longitude: req.body.longitude
           },
   coupon: {
           offer: req.body.offer,
           description: req.body.description,
           terms: req.body.terms,
           expiration: req.body.date,
-          image: req.body.photoURL
+          coupon_image: req.body.coupon_image
           }
   // reviews: {
   //         author: req.body.name,
@@ -107,7 +108,7 @@ router.put('/:id', function (req,res){
             name: req.body.name, 
             summary: req.body.summary,
             phone: req.body.phone, 
-            website: req.body.URL,
+            website: req.body.website,
             hours: req.body.hours,
             main_image: req.body.main_image
            },
@@ -117,6 +118,8 @@ router.put('/:id', function (req,res){
             city: req.body.city,
             state: req.body.state,
             zip: req.body.zip,
+            latitude: req.body.latitude,
+            longitude: req.body.longitude
             },
     coupon: {
             offer: req.body.offer,
