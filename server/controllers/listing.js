@@ -1,6 +1,7 @@
 var Listing = require('../models/listing');
 var express = require('express');
 var router = express.Router();
+var serverUrl = 'http://localhost';
 
 // function ensureAuthenticated (req, res, next){
 //   if (req.user && req.isAuthenticated()){
@@ -24,8 +25,17 @@ router.get("/",function (req,res){
   });
 });
 
+// renders listings by language
 router.get("/lang/:lang", function (req,res){
   Listing.find({ language: req.params.lang }, function (err, listings) {
+    if(err) throw err;
+    res.json(listings);
+  });
+});
+
+// renders listings by category
+router.get("/category/:category", function (req,res){
+  Listing.find({ category: req.params.category }, function (err, listings) {
     if(err) throw err;
     res.json(listings);
   });
@@ -57,15 +67,15 @@ router.get('/:language/:id', function (req,res){
 // posts new listing to db
 router.post('/', function (req,res){
   var listing = new Listing(
-  { 
+  {
     language : req.body.language,
     category : req.body.category,
     region : req.body.category,
-    info : { 
-          name: req.body.name, 
+    info : {
+          name: req.body.name,
           summary: req.body.summary,
-          phone: req.body.phone, 
-          website: req.body.website,
+          phone: req.body.phone,
+          website: req.body.URL,
           hours: req.body.hours,
           main_image: req.body.main_image
          },
@@ -89,7 +99,7 @@ router.post('/', function (req,res){
   //         rating: req.body.rating,
   //         review: req.body.review
   //         },
-  // tags: req.body.string 
+  // tags: req.body.string
   });
   listing.save(function (err){
     if (err) throw err;
@@ -104,11 +114,11 @@ router.put('/:id', function (req,res){
       language : req.body.language,
       category : req.body.category,
       region : req.body.region,
-      info : { 
-            name: req.body.name, 
+      info : {
+            name: req.body.name,
             summary: req.body.summary,
-            phone: req.body.phone, 
-            website: req.body.website,
+            phone: req.body.phone,
+            website: req.body.URL,
             hours: req.body.hours,
             main_image: req.body.main_image
            },
@@ -133,10 +143,10 @@ router.put('/:id', function (req,res){
     //         rating: req.body.rating,
     //         review: req.body.review
     //         },
-    // tags: req.body.string 
+    // tags: req.body.string
             },
             function (err, listing){
-              res.redirect('/admin');  
+              res.redirect('/admin');
   });
 });
 

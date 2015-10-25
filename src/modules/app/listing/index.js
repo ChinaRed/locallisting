@@ -17,14 +17,26 @@ module.exports =
       templateUrl: 'app/listing/views/layout.html',
       controller: 'langList'
     })
+    .state('categoryList', {
+      url: '/category/:category',
+      templateUrl: 'app/listing/views/layout.html',
+      controller: 'categoryList'
+    })
     .state('listing', {
       url: '/listings/:id',
       templateUrl: 'app/listing/views/listing.html',
       controller: 'singleListingController'
+    })
+    .state('storeAuthToken', {
+      url: '/store-auth-token/:token',
+      controller: 'tokenController'
     });
   })
   .controller('listingController', require('./listingController'))
   .controller('langList', require('./langList'))
-  .controller('singleListingController', require('./singleListingController'));
+  .controller('singleListingController', require('./singleListingController'))
+   .controller('tokenController', require('./tokenController'))
+  .controller('categoryList', require('./categoryList'));
+
     
   

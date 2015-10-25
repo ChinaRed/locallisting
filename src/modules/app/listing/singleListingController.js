@@ -13,4 +13,11 @@ module.exports = /*@ngInject*/
 
       $scope.couponImage = data.data[0].coupon.coupon_image;
     });
+
+    $scope.uberClick = function (event) {
+        console.log('this._id',this.listing._id);
+        localStorage.locationId = this.listing._id;
+        window.location.href = 'http://localhost:2233/api/uberlogin';
+
+    };
   };

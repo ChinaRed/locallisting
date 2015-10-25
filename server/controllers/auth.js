@@ -1,101 +1,108 @@
 var Listing = require('../models/listing');
 var express = require('express');
+var session = require('express-session');
 var router = express.Router();
 var User = require('../models/user');
-var passport = require('passport'), 
+var request = require('request');
+var passport = require('passport'),
+
 LocalStrategy = require('passport-local').Strategy;
 
-function ensureAuthenticated (req, res, next){
-  if (req.user && req.isAuthenticated()){
-    return next();
-  }
-  res.redirect("/login");
-  console.log('failed login');
-}
+var uberServerToken = process.env.UBER_SERVER_TOKEN;
+var uberClientID = process.env.UBER_CLIENT_ID;
+var uberClientSecret = process.env.UBER_CLIENT_SECRET;
+var serverUrl = 'http://localhost:2233';
 
-router.get('/admin', ensureAuthenticated, function (req,res){
-  Listing.find(function (err, listings){
-    res.render('auth/admin', { listings : listings });
-  });
+var OAuth2 = require('oauth').OAuth2;
+
+var oauth2 = new OAuth2(
+  uberClientID,
+  uberClientSecret,
+  'https://login.uber.com/',
+  'oauth/authorize',
+  'oauth/token',
+  null);
+
+
+router.get('/uberlogin', function(req, res){
+  res.redirect('https://login.uber.com/oauth/v2/authorize?client_id=' + uberClientID + '&response_type=code&scope=request');
 });
 
-passport.use(new LocalStrategy(
-  function(username, password, done){
-    User.findOne({ username : username }, function (err, user){
-      if (err) {return done(err);}
-      if (!user) {
-        return done(null, false, { message : 'Incorrect Username'});
+router.post('/calluber', function(req, res){
+  var uberApiUrl = 'https://sandbox-api.uber.com/v1/';
+
+  var uberRequest = {
+    start_latitude : 21.292384,
+    start_longitude : -157.8528565,
+    product_id : '18c45a2d-a7bc-44b3-900d-ccf1f6b77729'    
+  };
+  console.log('req.body',req.body.locationId);
+
+
+  Listing.find({ _id : req.body.locationId},
+    function (err, listing){
+      if(err) throw err;
+      return listing;
+  })
+  .then(function (listing) {
+    console.log('listing',listing);
+
+    uberRequest.end_latitude = listing[0].location.latitude;
+    uberRequest.end_longitude = listing[0].location.longitude;
+
+    console.log('uberRequest',uberRequest);
+    request.post({
+      url : uberApiUrl + 'requests',
+      json : uberRequest,
+      strictSSL: false,
+      auth : {
+        bearer : req.body.auth_token
       }
-      if (!user.validPassword(password)) {
-        return done(null, false, { message : 'Incorrect Password'});
+    }, function(err, response, body){
+      if(err){
+        console.log('request.post',err);
+        return res.json(err);
       }
-      return done(null, user);
-    });
-  }
-));
-
-passport.serializeUser(function (user, done){
-  done(null, user.id);
-});
-
-passport.deserializeUser(function (id, done){
-  User.findById(id, function (err, user){
-    done(err, user);
-  });
-});
-
-//renders edit page
-router.get('/admin/edit/:id', ensureAuthenticated, function (req, res){
-  Listing.findOne({_id:req.params.id}, 
-    function (err, listings) {
-    res.render('edit', {
-      listings : listings
+      body.success = true;
+      res.json(body);
     });
   });
+
+  // create http request to uber api
 });
 
-// //edits listing
-// router.put('edit/:id', ensureAuthenticated, function (req, res) {Listing.findOnAndUpdate({_id:req.params.id}, { $set:
-//   {
-//     name : req.params.name
-//   }}, function (err, listings){
-//     if (err) throw err;
-//     res.redirect('/admin');
-//   });
-// });
+router.get('/oauth/cb', function(req, res){
+  var code = req.query.code;
 
-//renders add new listing page
-router.get('/admin/new_listing', function (req, res){
-  res.render('new_listing');
+  console.log(code);
+
+  oauth2.getOAuthAccessToken(
+    code,
+    { // NOT IN THE UBER DOCS
+      grant_type: 'authorization_code',
+      redirect_uri: serverUrl+'/api/oauth/cb'
+    },
+    function (err, access_token, refresh_token, results){
+      if(err){
+        console.log('err1',err);
+        if(err.data){
+          res.end(err.data);
+        }else{
+          console.log('err2');
+          res.json(err);
+        }
+      } else if(results.error) {
+        console.log(results.error);
+        console.log('err3');
+
+        res.json(results.error);
+      } else {
+        // got token, send back to client
+        // POPUP Blocker must be disabled, or find workaround, or use redirect instead
+        console.log('access token', access_token);
+        res.redirect(serverUrl+'/#/store-auth-token/'+access_token);
+      }
+    });
 });
 
-// renders login page
-router.get('/login', function (req, res){
-  res.render('auth/login');
-});
-
-router.authenticate = passport.authenticate('local',{
-  successRedirect : '/admin',
-  failureREdirect : '/login'
-});
-
-router.post('/login', router.authenticate);
-
-router.get('/logout', function (req, res){
-  req.logout();
-  res.redirect('/');
-});
-
- router.post('/new_user', function (req, res){
-  var user = new User(
-  {
-    username : req.body.username,
-    password : req.body.password
-  });
-  user.save(function (err){
-    if (err) throw err;
-    res.redirect('/');
-  });
- });
-
-module.exports = router; 
+module.exports = router;
