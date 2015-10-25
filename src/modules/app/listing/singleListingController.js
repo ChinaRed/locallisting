@@ -13,4 +13,9 @@ module.exports = /*@ngInject*/
 
       $scope.couponImage = data.data[0].coupon.coupon_image;
     });
+
+    $scope.uberClick = function () {
+      console.log('hello moto');
+      ListingService.callUber();
+    };
   };

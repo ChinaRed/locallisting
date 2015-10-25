@@ -13,6 +13,13 @@ var serverUrl = 'http://localhost:2233';
 
 var OAuth2 = require('oauth').OAuth2;
 
+router.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  
+  next();
+});
+
 var oauth2 = new OAuth2(
   uberClientID,
   uberClientSecret,
@@ -20,12 +27,7 @@ var oauth2 = new OAuth2(
   'oauth/authorize',
   'oauth/token',
   null);
-console.log('1');
-router.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+
 
 router.get('/uberlogin', function(req, res){
   res.redirect('https://login.uber.com/oauth/v2/authorize?client_id=' + uberClientID + '&response_type=code&scope=request');

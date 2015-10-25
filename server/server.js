@@ -17,13 +17,13 @@ var auth = require('./controllers/auth');
 var admin = require('./controllers/admin');
 
 mongoose.connect('mongodb://chinared:'+ process.env.DBPASS +'@ds061371.mongolab.com:61371/locallistings');
-app.use('/api/',auth);
 
 // middleware
 app.use(function (req, res, next){
   res.set("Access-Control-Allow-Origin","*");
   next();
 });
+app.use('/api/',auth);
 
 app.use(bodyParser.urlencoded({extend:true}));
 app.use(session({ secret : 'keyboard cat'}));
