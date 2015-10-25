@@ -28,7 +28,11 @@ h1{
   float: right;
 }
 
-a{
+.text-center {
+  text-align: center;
+}
+
+a {
   text-decoration: none;
   color: $white;
 
@@ -36,3 +40,70 @@ a{
     color: $looted;
   }
 }
+
+.hoff {
+  margin-top: 120px;
+  width: 100%;
+  padding-bottom: 190px;
+  position: relative; }
+  .hoff i {
+    font-weight: 300;
+    font-size: 25px;
+    color: #F69D52;
+    vertical-align: top;
+    margin-left: -8px;
+    font-style: normal; }
+  .hoff h1 {
+    color: #fff;
+    font-size: 2.25em;
+    margin: 0 0 20px 0; }
+  .hoff h2 {
+    color: #fff;
+    margin: 0 0 20px 0; }
+  .hoff p {
+    color: #fff;
+    font-size: 1.25em; }
+  .hoff .btn {
+    margin-top: 10px; }
+  .hoff .logo-placeholder {
+    z-index: 10;
+    width: 300px;
+    height: 495px;
+    position: absolute;
+    bottom: -340px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%); }
+
+.floating-logo {
+  -webkit-animation-name: floating-logo;
+          animation-name: floating-logo;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out; }
+
+@-webkit-keyframes floating-logo {
+  from {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0); }
+  50% {
+    -webkit-transform: translate(-50%, 20px);
+            transform: translate(-50%, 20px); }
+  to {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0); } }
+
+@keyframes floating-logo {
+  from {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0); }
+  50% {
+    -webkit-transform: translate(-50%, 20px);
+            transform: translate(-50%, 20px); }
+  to {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0); } }
