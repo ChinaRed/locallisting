@@ -6,3 +6,4 @@ release
 tmp
 bower_components
 .env
+www
